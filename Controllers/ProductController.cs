@@ -27,14 +27,14 @@ namespace DemoApi.Controllers
             return await _context.Products.ToListAsync();
         }
 
-        //[HttpPost]
-        //public async Task<ActionResult<Product>> Search(DateTime date)
-        //{
-        //    var movies = (from i in _context.Products
-        //                  where i.Date == date
-        //                  select i);
-        //    return Ok(await movies.ToListAsync());
-        //}
+        [HttpPost]
+        public async Task<ActionResult<Product>> Search(Product p)
+        {
+            var movies = (from i in _context.Products
+                          where i.ProductName == p.ProductName
+                          select i);
+            return Ok(await movies.ToListAsync());
+        }
         // GET: api/Movie/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> Details(int id)
