@@ -16,25 +16,25 @@ namespace BikeApi.Models
         }
         [Key]
         public int UserId { get; set; }
-        [Required(ErrorMessage = "*Enter a Username")]
+        //[Required(ErrorMessage = "*Enter a Username")]
         public string? UserName { get; set; }
-        [Required(ErrorMessage = "*")]
-        public int? MobileNo { get; set; }
-        [Required(ErrorMessage = "Please enter the Email Id")]
-        [DataType(DataType.EmailAddress, ErrorMessage = "Please enter a valid Email ID")]
+        //[Required(ErrorMessage = "*")]
+        public string? MobileNo { get; set; }
+        //[Required(ErrorMessage = "Please enter the Email Id")]
+        //[DataType(DataType.EmailAddress, ErrorMessage = "Please enter a valid Email ID")]
         public string? EmailId { get; set; }
         public string? Password { get; set; }
-        [Compare("Password", ErrorMessage = "Password do not matched")]
-        [NotMapped]
-        [Display(Name = "ConfirmPassword")]
-        public string? ConfirmPassword { get; set; }
-        [Required(ErrorMessage = "*")]
+        //[Compare("Password", ErrorMessage = "Password do not matched")]
+        //[NotMapped]
+        //[Display(Name = "ConfirmPassword")]
+        //public string? ConfirmPassword { get; set; }
+        //[Required(ErrorMessage = "*")]
         public string? Address { get; set; }
-        [Required(ErrorMessage = "*")]
+        //[Required(ErrorMessage = "*")]
         public string? Pincode { get; set; }
 
-        public virtual ICollection<Cart> Carts { get; set; }
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
-        public virtual ICollection<OrderMaster> OrderMasters { get; set; }
+        public virtual ICollection<Cart>? Carts { get; set; }
+        public virtual ICollection<OrderDetail>? OrderDetails { get; set; }
+        public virtual ICollection<OrderMaster>? OrderMasters { get; set; }
     }
 }

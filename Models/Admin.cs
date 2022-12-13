@@ -10,14 +10,14 @@ namespace BikeApi.Models
     {
         [Key]
         public int UserId { get; set; }
-        [Required(ErrorMessage = "*")]
+        //[Required(ErrorMessage = "*")]
         public string? Username { get; set; }
-        [Required(ErrorMessage = "*")]
+        //[Required(ErrorMessage = "*")]
         public string? Password { get; set; }
-        [Compare("Password", ErrorMessage = "Password do not matched")]
-        [NotMapped]
-        [Display(Name = "ConfirmPassword")]
-        public string? ConfirmPassword { get; set; }
+        //[Compare("Password", ErrorMessage = "Password do not matched")]
+        //[NotMapped]
+        //[Display(Name = "ConfirmPassword")]
+        //public string? ConfirmPassword { get; set; }
 
     }
 }

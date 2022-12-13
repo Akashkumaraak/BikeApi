@@ -27,7 +27,7 @@ namespace BikeApi.Models
         public int? Userid { get; set; }
 
         public virtual User? User { get; set; }
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+        public virtual ICollection<OrderDetail>? OrderDetails { get; set; }
     }
 }
 

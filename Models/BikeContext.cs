@@ -4,7 +4,7 @@ using BikeApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Demo.Models
+namespace BikeApi.Models
 {
     public partial class BikeContext : DbContext
     {

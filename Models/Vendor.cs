@@ -18,6 +18,6 @@ namespace BikeApi.Models
         public string? SupplierName { get; set; }
         public string? Location { get; set; }
 
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<Product>? Products { get; set; }
     }
 }

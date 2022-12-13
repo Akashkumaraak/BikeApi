@@ -26,8 +26,8 @@ namespace BikeApi.Models
         public int? Id { get; set; }
         [Display(Name = "Vendor Id")]
         public virtual Category? IdNavigation { get; set; }
-        public virtual ICollection<Cart> Carts { get; set; }
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+        public virtual ICollection<Cart>? Carts { get; set; }
+        public virtual ICollection<OrderDetail>? OrderDetails { get; set; }
     }
 }
 

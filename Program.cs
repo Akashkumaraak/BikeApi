@@ -1,4 +1,4 @@
-using Demo.Models;
+using BikeApi.Models;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
