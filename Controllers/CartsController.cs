@@ -169,7 +169,7 @@ namespace BikeApi.Controllers
             //var OrderMaster = _context.OrderMasters.Find(id);
             //return View(OrderMaster);
         }
-        [HttpGet]
+        [HttpPost]
         [Route("GetPayment")]
         public async Task<IActionResult>GetPayment(OrderMaster m)
         {
