@@ -169,5 +169,33 @@ namespace BikeApi.Controllers
             //var OrderMaster = _context.OrderMasters.Find(id);
             //return View(OrderMaster);
         }
+        [HttpGet]
+        [Route("GetPayment")]
+        public async Task<IActionResult>GetPayment(OrderMaster m)
+        {
+            m.AmountPaid = m.TotalAmount;
+            //var UserId = HttpContext.Session.GetInt32("Userid");
+            List<Cart> cart = (from i in _db.Carts where i.Userid == m.Userid select i).ToList();
+            //var pid= (int)HttpContext.Session.GetInt32("Productid");
+
+            Product p = new Product();
+
+
+            _db.OrderMasters.Update(m);
+            _db.SaveChanges();
+            foreach (var j in cart)
+            {
+                var s = (from i in _db.Products
+                         where i.ProductId == j.Productid
+                         select i).SingleOrDefault();
+                s.Stock -= j.Quantity;
+                _db.Products.Update(s);
+            }
+
+            _db.SaveChanges();
+            _db.Carts.RemoveRange(cart);
+            _db.SaveChanges();
+            return Ok();
+        }
     }
 }
