@@ -106,8 +106,8 @@ namespace BikeApi.Controllers
         public async Task<ActionResult<Cart>> Index()
         {
             List<Cart> cart = new List<Cart>();
-            //cart = await _db.Carts.Include(p => p.Product).ToListAsync();
-            cart = await _db.Carts.ToListAsync();
+            cart = await _db.Carts.Include(p => p.Product).ToListAsync();
+            //cart = await _db.Carts.ToListAsync();
             return Ok(cart);
         }
         [HttpPost]
